@@ -7,10 +7,11 @@ import { Feature } from '../sections/Features/Feature'
 import { Box } from '@chakra-ui/react'
 
 const Landing = () => {
+  const colors = "#1a202c"
   return (
     <>
       <Hero />
-      <Box bg="gray.50" _dark={{ bg: "blackAlpha.600" }}>
+      <Box bg="gray.50" _dark={{ bg: colors }}>
       <Map />
       <About />
       <Feature />

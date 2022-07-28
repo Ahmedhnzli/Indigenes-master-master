@@ -7,7 +7,7 @@ import {
   Stack,
   Text,
 
-  useColorModeValue as mode,
+  
   LightMode,
   Flex,
   Center,
@@ -27,12 +27,12 @@ export const Hero = () => {
           >
             <source src={vid} type="video/mp4" ></source>
           </video>
-      <Flex as="section" color="white" bg={"blackAlpha.600"} >
+      <Flex as="section" color="white" >
         <Center h="100vh" w='100%'>
         <Box
           maxW={{
             base: 'xl',
-            md: '5xl',
+            md: '7xl',
           }}
           mx="auto"
           px={{

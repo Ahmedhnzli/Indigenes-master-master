@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Box, Button, chakra, Heading, HStack, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, Button, chakra, Heading, SimpleGrid } from '@chakra-ui/react'
 
 export const About = () => {
   return (

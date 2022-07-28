@@ -3,7 +3,7 @@ import * as React from 'react'
 
 export const Logo = (props) => {
   // const { iconColor = 'currentColor', ...rest } = props
-  const colores = useColorModeValue('black', 'white')
+  const colores = "white"
 
   return (
     <chakra.svg width="2355" height="605" viewBox="0 0 2355 605" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>

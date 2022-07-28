@@ -20,10 +20,10 @@ video{
     width: 100%;
     height: 100vh !important;
     object-fit: cover;
+    filter: brightness(0.5);
 }
 
 /********* TOOLTIP CSS    *********/
-
 
 .popup-content {
     margin: auto;
@@ -35,10 +35,12 @@ video{
     font-weight: bold;
     color: white;
     border-radius: 25px;
+    border: 2px solid #E3BF3E;
   }
   .popup-arrow {
     color: #27272700;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(5px);
+    stroke-width: 2px;
 
   }
   [role='tooltip'].popup-content {

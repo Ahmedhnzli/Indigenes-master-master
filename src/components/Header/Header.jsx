@@ -16,7 +16,7 @@ import {ColorModeSwitcher} from '../../ColorModeSwitcher'
 export const Header = () => {
   return (
     <Box >
-      <Box as="header" bg={mode('white', 'blackAlpha.600')}>
+      <Box as="header">
         <Box
           backdropBlur={13}
           maxW="7xl"  
