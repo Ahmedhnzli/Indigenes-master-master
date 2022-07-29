@@ -1,9 +1,11 @@
 import {
   Box,
   Button,
+  Center,
   Checkbox,
   Container,
   Divider,
+  Flex,
   FormControl,
   FormLabel,
   Heading,
@@ -33,7 +35,10 @@ export const Login = () => (
   >
     <Stack spacing="8">
       <Stack spacing="6">
-        <Logo />
+        <Center>
+
+        <Logo h={20}/>
+        </Center>
         <Stack
           spacing={{
             base: '2',

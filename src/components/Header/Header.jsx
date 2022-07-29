@@ -12,6 +12,7 @@ import { Logo } from './Logo'
 import { MobileNav } from './MobileNav'
 import { NavLink } from './NavLink'
 import {ColorModeSwitcher} from '../../ColorModeSwitcher'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
   return (
@@ -47,6 +48,7 @@ export const Header = () => {
               <NavLink.Desktop href="#"> Pricing </NavLink.Desktop>
               <NavLink.Desktop href="#"> Contact </NavLink.Desktop>
               </HStack>
+            
               </Flex>
               <Flex alignItems="center" justify="flex-end">
               <HStack
@@ -56,7 +58,7 @@ export const Header = () => {
                   md: "flex",
                 }}>
 
-                  <NavLink.Desktop href="#"> Sign in </NavLink.Desktop>
+                  <NavLink.Desktop><Link to="/login">Sign in</Link>  </NavLink.Desktop>
                 <LightMode>
                 <Button colorScheme="yellow" rounded="5" >
                   Sign up
