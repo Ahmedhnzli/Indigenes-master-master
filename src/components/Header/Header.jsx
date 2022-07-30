@@ -3,7 +3,6 @@ import {
   Button,
   Flex,
   HStack,
-  useColorModeValue as mode,
   VisuallyHidden,
   LightMode
 } from '@chakra-ui/react'
@@ -60,9 +59,10 @@ export const Header = () => {
 
                   <NavLink.Desktop><Link to="/login">Sign in</Link>  </NavLink.Desktop>
                 <LightMode>
-                <Button colorScheme="yellow" rounded="5" >
+                <Link to="/signup"> <Button colorScheme="yellow" rounded="5" >
                   Sign up
-                </Button>
+                </Button></Link>
+               
                 </LightMode>
                 <ColorModeSwitcher/>
                 </HStack>

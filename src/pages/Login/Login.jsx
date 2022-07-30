@@ -5,7 +5,7 @@ import {
   Checkbox,
   Container,
   Divider,
-  Flex,
+
   FormControl,
   FormLabel,
   Heading,
@@ -17,6 +17,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import { Logo } from './Logo'
 import { OAuthButtonGroup } from './OAuthButtonGroup'
 import { PasswordField } from './PasswordField'
@@ -37,7 +38,7 @@ export const Login = () => (
       <Stack spacing="6">
         <Center>
 
-        <Logo h={20}/>
+       <Link to="/"><Logo h={20}/></Link> 
         </Center>
         <Stack
           spacing={{
