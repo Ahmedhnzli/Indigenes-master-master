@@ -14,6 +14,7 @@ import {
   useColorModeValue,
  
 } from '@chakra-ui/react';
+import'../Login/logo.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
