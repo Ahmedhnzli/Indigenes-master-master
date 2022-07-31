@@ -25,6 +25,7 @@ import { RemoveScroll } from 'react-remove-scroll'
 import { Logo } from './Logo'
 import { NavLink } from './NavLink'
 import {ColorModeSwitcher} from '../../ColorModeSwitcher'
+import { Link } from 'react-router-dom'
 const variants = {
   show: {
     display: 'revert',
@@ -174,14 +175,16 @@ export const MobileNav = () => {
                  <ColorModeSwitcher/>
               </SimpleGrid>
               <VStack mt="8" spacing="4">
-                <Button w="full" colorScheme="yellow" onClick={CloseEvent}>
-                  Sign in
-                </Button>
+                 <Link to='/login'><Button w="full" colorScheme="yellow" onClick={CloseEvent}>
+               Sign in
+                </Button></Link> 
+                
                 <Box textAlign="center" fontWeight="medium">
                   Don't have an account?{' '}
-                  <Box as="a" color={mode('yellow.400', 'yellow.400')} href="#">
+                  <Link to='/signup'> <Box as="a" color={mode('yellow.400', 'yellow.400')} >
                     Sign up
-                  </Box>
+                  </Box></Link>
+                 
                 </Box>
               </VStack>
             </Box>

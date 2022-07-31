@@ -31,9 +31,9 @@ export default function SignupCard() {
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
         <Link to="/"><Logo h={20}/></Link>
-          <Heading fontSize={'4xl'} textAlign={'center'}>
+          <Link to ='/signup'><Heading fontSize={'4xl'} textAlign={'center'}>
             Sign up
-          </Heading>
+          </Heading></Link>
          
         </Stack>
         <Box
@@ -79,7 +79,7 @@ export default function SignupCard() {
               <Button
                 loadingText="Submitting"
                 size="lg"
-                bg={'blue.400'}
+                bg={'yellow.400'}
                 color={'white'}
                 _hover={{
                   bg: 'blue.500',
@@ -89,7 +89,9 @@ export default function SignupCard() {
             </Stack>
             <Stack pt={6}>
               <Text align={'center'}>
-                Already a user? <Link to ='/login'color={'blue.400'}>Login</Link>
+                Already a user?<Link to='/login'><Button variant="link" colorScheme="yellow">
+              Login
+            </Button></Link>
               </Text>
             </Stack>
           </Stack>

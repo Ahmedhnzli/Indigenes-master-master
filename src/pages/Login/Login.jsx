@@ -57,9 +57,9 @@ export const Login = () => (
           </Heading>
           <HStack spacing="1" justify="center">
             <Text color="muted">Don't have an account?</Text>
-            <Button variant="link" colorScheme="yellow">
+            <Link to='/signup'><Button variant="link" colorScheme="yellow">
               Sign up
-            </Button>
+            </Button></Link>
           </HStack>
         </Stack>
       </Stack>
@@ -100,7 +100,14 @@ export const Login = () => (
             </Button>
           </HStack>
           <Stack spacing="6">
-            <Button variant="primary">Sign in</Button>
+            <Button   loadingText="Submitting"
+                size="lg"
+                bg={'yellow.400'}
+                color={'white'}
+                _hover={{
+                  bg: 'blue.500',
+                }}
+                variant="primary">Sign in</Button>
             <HStack>
               <Divider />
               <Text fontSize="sm" whiteSpace="nowrap" color="muted">
