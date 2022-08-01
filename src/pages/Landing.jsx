@@ -6,6 +6,7 @@ import { About } from '../sections/About/About'
 import { Feature } from '../sections/Features/Feature'
 import { Box } from '@chakra-ui/react'
 
+import Contact from '../sections/Contact/Contact'
 const Landing = () => {
   const colors = "#1a202c"
   return (
@@ -18,6 +19,7 @@ const Landing = () => {
       </Box>
       <Box bg="gray.100" _dark={{ bg: "blackAlpha.700" }}>
       <Pricing />
+      <Contact />
       </Box>
     </>
   )
