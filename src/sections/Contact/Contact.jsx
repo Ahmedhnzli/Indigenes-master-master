@@ -28,10 +28,10 @@ import {
   
   export default function contact() {
     return (
-      <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
+      <Container bg="#E3BF3E" maxW="full" mt={0} centerContent overflow="hidden">
         <Flex>
           <Box
-            bg="#02054B"
+            bg="#171717"
             color="white"
             borderRadius="lg"
             m={{ sm: 4, md: 16, lg: 10 }}
@@ -41,7 +41,7 @@ import {
                 <WrapItem>
                   <Box>
                     <Heading>Contact</Heading>
-                    <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
+                    <Text mt={{ sm: 3, md: 3, lg: 5 }} color="whiteAlpha.800">
                       Fill up the form below to contact
                     </Text>
                     <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
@@ -53,7 +53,7 @@ import {
                           variant="ghost"
                           color="#DCE2FF"
                           _hover={{ border: '2px solid #1C6FEB' }}
-                          leftIcon={<MdPhoneIphone color="#1970F1" size="20px" />}>
+                          leftIcon={<MdPhoneIphone color="#E3BF3E" size="20px" />}>
                           +91-988888888
                         </Button>
                         <Button
@@ -63,8 +63,8 @@ import {
                           variant="ghost"
                           color="#DCE2FF"
                           _hover={{ border: '2px solid #1C6FEB' }}
-                          leftIcon={<MdMail color="#1970F1" size="20px" />}>
-                          hello@abc.com
+                          leftIcon={<MdMail color="#E3BF3E" size="20px" />}>
+                          hello@indigenes.com
                         </Button>
                         <Button
                           size="md"
@@ -73,8 +73,8 @@ import {
                           variant="ghost"
                           color="#DCE2FF"
                           _hover={{ border: '2px solid #1C6FEB' }}
-                          leftIcon={< MdAddLocation color="#1970F1" size="20px" />}>
-                          Karnavati, India
+                          leftIcon={< MdAddLocation color="#E3BF3E" size="20px" />}>
+                          Tunis, Tunisia
                         </Button>
                       </VStack>
                     </Box>
@@ -88,7 +88,7 @@ import {
                         variant="ghost"
                         size="lg"
                         isRound={true}
-                        _hover={{ bg: '#0D74FF' }}
+                        _hover={{ bg: '#E3BF3E' }}
                         icon={<FaFacebook size="28px" />}
                       />
                       <IconButton
@@ -96,7 +96,7 @@ import {
                         variant="ghost"
                         size="lg"
                         isRound={true}
-                        _hover={{ bg: '#0D74FF' }}
+                        _hover={{ bg: '#E3BF3E' }}
                         icon={<FaGithub size="28px" />}
                       />
                       <IconButton
@@ -104,14 +104,14 @@ import {
                         variant="ghost"
                         size="lg"
                         isRound={true}
-                        _hover={{ bg: '#0D74FF' }}
+                        _hover={{ bg: '#E3BF3E' }}
                         icon={<FaDiscord size="28px" />}
                       />
                     </HStack>
                   </Box>
                 </WrapItem>
                 <WrapItem>
-                  <Box bg="white" borderRadius="lg">
+                  <Box bg="#E7E7E7" borderRadius="lg">
                     <Box m={8} color="#0B0E3F">
                       <VStack spacing={5}>
                         <FormControl id="name">
@@ -147,7 +147,7 @@ import {
                         <FormControl id="name" float="right">
                           <Button
                             variant="solid"
-                            bg="#0D74FF"
+                            bg="#E3BF3E"
                             color="white"
                             _hover={{}}>
                             Send Message
