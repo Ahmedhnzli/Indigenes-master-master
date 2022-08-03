@@ -1,0 +1,18 @@
+[
+    {
+        "id" : "Bizerte",
+        "name" : "Bizerte",
+        "attributes" : [
+            {
+                "id" : 1,
+                "text" : "Many monuments built by Aghlabid emirs"
+            },
+            {
+                "id" : 2,
+                "text" : "The Great Mosque, on the edge of the medina, a major pilgrimage site."
+            }
+        ],
+        "nbrDistructs" : 11,
+        "img" : "https://you.com/proxy?url=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.JivFRIZuLW6K6tvj1mRh7QHaE8%26w%3D690%26c%3D7%26pid%3DApi%26p%3D0"
+    }
+]
