@@ -1,8 +1,9 @@
-import { Box, Button, Flex, Heading,Modal,ModalBody,ModalCloseButton,ModalContent,ModalFooter,ModalHeader,ModalOverlay,Text ,useColorModeValue, useDisclosure  } from '@chakra-ui/react'
+import { Box, Image, Button, Flex, Heading,Modal,ModalBody,ModalCloseButton,ModalContent,ModalFooter,ModalHeader,ModalOverlay,Text ,useColorModeValue, useDisclosure, ListIcon, ListItem, List  } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import "./style.css"
 import Popup from 'reactjs-popup';
 import data from './data.json'
+import {MdCheckCircle} from 'react-icons/md'
 
 const Map = () => {
   const colores = useColorModeValue('#e2e8f0', '#2d3748')
@@ -17,9 +18,9 @@ const Map = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [overlay, setOverlay] = React.useState(<OverlayOne />)
 
-  function getInfo ({value}) {
-    let sampleObject = data.find(e => e.id == {value});
-    setSampleObject(sampleObject);
+  function getInfo (value) {
+    let sampleObject = data.find(e => e.id == value)
+    setSampleObject(sampleObject)
   }
   
   return (
@@ -49,14 +50,21 @@ const Map = () => {
                 viewBox="0 0 558 1031" 
                 fill="none"
             >
-                <Popup trigger={open => (<path id='Bizerte' fill-rule="evenodd" clip-rule="evenodd" d="M217.703 27.127V28.877V34.5332V38.7832V41.5957L221.713 43.002L225.688 45.8457H230.472L231.246 48.6582L236.839 57.8457L240.005 62.8145L245.563 69.877L251.93 76.9395L255.131 80.502L259.106 83.3145L263.89 86.8457H267.056L271.066 84.0332L277.433 79.0645L279.79 76.252L283.8 74.8457L285.383 72.7207V70.5957L290.167 69.1895L295.724 67.0645L304.483 64.2207L312.433 59.9707L319.609 57.1582L323.584 57.8457L326.75 58.5645L329.951 59.2832L333.117 59.9707L338.71 60.6895L340.047 60.627L341.876 55.752L345.886 50.7832L353.836 38.0645L356.228 35.9395L360.977 35.2207L366.57 33.8145L369.806 34.627L370.545 33.8145L368.962 33.127L363.369 31.002L358.62 28.1582L359.394 27.4707H365.761L373.711 28.1582L375.329 26.752L374.52 23.9082L364.987 19.6895L354.61 14.7207L345.077 13.3145L333.926 15.4395L327.559 16.127L322.775 18.252L322.001 18.9707L326.75 20.377L329.142 21.0957L331.534 21.8145L330.76 25.3457L329.142 28.877L322.001 31.002L314.825 28.877L311.659 26.0332L312.433 21.8145V18.252L315.634 16.127H318.026L322.775 14.0332L324.393 11.9082V9.7832L320.383 5.5332L310.85 2.00195L298.89 2.7207L290.167 5.5332L273.423 11.9082L249.573 19.6895L238.422 22.502L217.703 27.127Z" fill={colores} stroke='#E3BF3E' onClick={() => {
-          setOverlay(<OverlayOne />)
-          onOpen()
-          const el = document.getElementById('Bizerte');
-          <getInfo value={el.id}/>
-          console.log(el.id);
-
-        }}>Trigger - {open ? 'Opened' : 'Closed'}</path>)} position="top center" on="hover" closeOnDocumentClick><span>Bizerte</span></Popup>
+                <Popup trigger={open => 
+                (
+                <path id='Bizerte' fill-rule="evenodd" clip-rule="evenodd" d="M217.703 27.127V28.877V34.5332V38.7832V41.5957L221.713 43.002L225.688 45.8457H230.472L231.246 48.6582L236.839 57.8457L240.005 62.8145L245.563 69.877L251.93 76.9395L255.131 80.502L259.106 83.3145L263.89 86.8457H267.056L271.066 84.0332L277.433 79.0645L279.79 76.252L283.8 74.8457L285.383 72.7207V70.5957L290.167 69.1895L295.724 67.0645L304.483 64.2207L312.433 59.9707L319.609 57.1582L323.584 57.8457L326.75 58.5645L329.951 59.2832L333.117 59.9707L338.71 60.6895L340.047 60.627L341.876 55.752L345.886 50.7832L353.836 38.0645L356.228 35.9395L360.977 35.2207L366.57 33.8145L369.806 34.627L370.545 33.8145L368.962 33.127L363.369 31.002L358.62 28.1582L359.394 27.4707H365.761L373.711 28.1582L375.329 26.752L374.52 23.9082L364.987 19.6895L354.61 14.7207L345.077 13.3145L333.926 15.4395L327.559 16.127L322.775 18.252L322.001 18.9707L326.75 20.377L329.142 21.0957L331.534 21.8145L330.76 25.3457L329.142 28.877L322.001 31.002L314.825 28.877L311.659 26.0332L312.433 21.8145V18.252L315.634 16.127H318.026L322.775 14.0332L324.393 11.9082V9.7832L320.383 5.5332L310.85 2.00195L298.89 2.7207L290.167 5.5332L273.423 11.9082L249.573 19.6895L238.422 22.502L217.703 27.127Z" fill={colores} stroke='#E3BF3E' 
+                  onClick={() => {
+                    setOverlay(<OverlayOne />)
+                    onOpen()
+                    const el = document.getElementById('Bizerte');
+                    getInfo(el.id)
+                    console.log(el)}
+                  }
+                >
+                  Trigger - {open ? 'Opened' : 'Closed'}</path>)}
+                  position="top center" on="hover" closeOnDocumentClick>
+                  <span>Bizerte</span>
+                </Popup>
                 <Popup trigger={open => (<path fill-rule="evenodd" clip-rule="evenodd" d="M438.994 505.46V508.995L438.198 511.116L437.402 515.359V519.602L438.198 522.43L440.586 525.966L445.362 527.38L449.342 525.966L450.138 523.844L453.321 524.551L454.913 525.259L455.709 528.087L457.301 533.037V535.158L458.893 536.572L460.485 535.865L462.077 530.915L469.24 526.673L474.812 523.137L479.588 518.895L481.976 518.187L485.159 516.066L485.955 513.238L483.568 511.116L480.384 509.702L478.792 508.288L470.832 504.752L467.649 502.631L458.097 501.924L446.954 500.51L443.77 501.217L438.994 505.46Z" fill={colores} stroke='#E3BF3E' stroke-width="2.5" >Trigger - {open ? 'Opened' : 'Closed'}</path>)} position="top center" on="hover" closeOnDocumentClick><span> Djerba</span></Popup>
                 <Popup trigger={open => (<path fill-rule="evenodd" clip-rule="evenodd" d="M507.448 367.574L502.673 374.645L498.693 377.474L497.101 381.716L493.121 385.959L493.917 388.08L496.305 387.373L500.285 385.252L508.244 380.302L513.816 376.767L517 373.231L518.592 371.11V368.988L516.204 367.574L512.224 366.867L507.448 367.574Z" fill={colores} stroke='#E3BF3E' stroke-width="2.5" >Trigger - {open ? 'Opened' : 'Closed'}</path>)} position="top center" on="hover" closeOnDocumentClick><span>Kerkennah</span></Popup>
                 <Popup trigger={open => (<path fill-rule="evenodd" clip-rule="evenodd" d="M110.275 378.189L117.416 380.314L127.793 383.127L134.933 386.658L141.3 387.377L148.476 388.096L156.426 386.658L173.944 380.314L193.854 371.814L204.97 364.752L210.563 356.971L212.955 350.596L217.704 347.064L218.513 342.814L223.297 340.689L233.639 337.877L240.815 333.627L243.207 323.721V315.971L241.588 311.721L238.423 309.596L236.031 308.189L233.639 307.471L229.664 306.064L228.081 302.533V297.564L232.056 291.221L237.613 288.377L238.423 285.564L239.196 282.721L243.207 280.596L247.955 277.783L250.347 274.939V269.283L247.181 265.752L241.588 262.221L234.448 257.971L228.081 254.439L224.88 252.314L220.096 250.908L219.322 250.189L213.729 248.783L210.563 245.939V244.533L207.362 240.283L204.97 239.596H202.613L195.437 238.158L187.487 233.221L185.095 231.814L177.11 229.689L171.552 228.283L168.386 227.564H165.185H160.401L158.818 231.096L155.652 236.064V240.283V242.408L154.034 245.252L150.059 247.377H146.893H142.919L138.908 243.846L136.516 242.408L130.959 243.127L127.793 244.533L124.592 247.377L123.783 248.783L119.034 250.189L117.803 250.314L116.642 263.627L115.059 274.939L112.667 284.127V290.502L114.25 296.158L117.416 301.814L124.592 312.408L125.401 313.846L124.592 315.252L121.426 317.377L117.416 321.627L112.667 329.377L110.275 337.158L109.466 349.189L107.883 357.689V369.689L108.692 371.814L109.466 375.346L110.275 377.471V378.189Z" fill={colores} stroke='#E3BF3E' >Trigger - {open ? 'Opened' : 'Closed'}</path>)} position="top center" on="hover" closeOnDocumentClick><span> Kasserine</span></Popup>
@@ -91,9 +99,15 @@ const Map = () => {
             <ModalHeader>{sampleObject.name}</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <Text>Custom backdrop filters!</Text>
+              <Image src={sampleObject.img}></Image>
+              <List spacing={3} my={5}>
+              {sampleObject.attributes && sampleObject.attributes.length>0 && sampleObject.attributes.map((item)=><ListItem><ListIcon as={MdCheckCircle} color='green.500' />{item.text}</ListItem>)}
+              </List>
+              <Text>Number of Distructs: {sampleObject.nbrDistructs}</Text>
+              
             </ModalBody>
             <ModalFooter>
+              <Button colorScheme='yellow' mx={3}>See More</Button>
               <Button onClick={onClose}>Close</Button>
             </ModalFooter>
           </ModalContent>
