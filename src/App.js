@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react';
 import { Main } from './pages/Main';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {Login} from './pages/Login/Login'
+import SignIn, {Login} from './pages/Login/SignIn'
 import SignupCard  from './pages/sign up/Signup';
 function App() {
   return (
@@ -13,11 +13,9 @@ function App() {
 <Router>
       <Routes> 
       <Route path='/' exact element={ <Main/>} />
-      <Route path='/login' element={<Login />} />
+      <Route path='/signin' element={<SignIn/>} />
       <Route path='/signup' element={<SignupCard/>} />
 
-     
-       
  
 </Routes>
      

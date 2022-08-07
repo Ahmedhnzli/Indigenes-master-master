@@ -57,7 +57,7 @@ export const Header = () => {
                   md: "flex",
                 }}>
 
-                  <NavLink.Desktop><Link to="/login">Sign in</Link>  </NavLink.Desktop>
+                  <NavLink.Desktop><Link to="/signin">Sign in</Link>  </NavLink.Desktop> 
                 <LightMode>
                 <Link to="/signup"> <Button colorScheme="yellow" rounded="5" >
                   Sign up
