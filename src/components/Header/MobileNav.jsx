@@ -175,7 +175,7 @@ export const MobileNav = () => {
                  <ColorModeSwitcher/>
               </SimpleGrid>
               <VStack mt="8" spacing="4">
-                 <Link to='/login'><Button w="full" colorScheme="yellow" onClick={CloseEvent}>
+                 <Link to='/signin'><Button w="full" colorScheme="yellow" onClick={CloseEvent}>
                Sign in
                 </Button></Link> 
                 
