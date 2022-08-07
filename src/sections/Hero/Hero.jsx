@@ -15,7 +15,7 @@ import {
 import * as React from 'react'
 
 import "../Map/style.css"
-import vid from "../../assets/video/cover.mp4"
+import vid from "../../assets/video/1.mp4"
 
 export const Hero = () => {
   return (
