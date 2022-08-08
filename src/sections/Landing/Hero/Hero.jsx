@@ -13,9 +13,10 @@ import {
   Center,
 } from '@chakra-ui/react'
 import * as React from 'react'
+import { Link as RLink }  from 'react-router-dom'
 
 import "../Map/style.css"
-import vid from "../../assets/video/1.mp4"
+import vid from "../../../assets/video/1.mp4"
 
 export const Hero = () => {
   return (
@@ -81,7 +82,8 @@ export const Hero = () => {
                 fontWeight="bold"
                 fontSize="md"
               >
-                Get started free
+                <RLink to='/projects'>Get started free</RLink>
+                
               </Button>
             </LightMode>
           </Stack>

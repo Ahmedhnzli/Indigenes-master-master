@@ -2,6 +2,7 @@
 import {
   Box,
   Button,
+  Divider,
   Flex,
   FormControl,
   FormLabel,
@@ -34,7 +35,7 @@ import { FaApple, FaFacebook, FaGoogle } from 'react-icons/fa';
 
 function SignUp() {
   const titleColor = useColorModeValue('#E3BF3E', '#E3BF3E');
-  const textColor = useColorModeValue('gray.700', 'white');
+  const textColor = useColorModeValue('gray.700', 'gray.200');
   const bgColor = useColorModeValue('white', 'gray.700');
   const bgIcons = useColorModeValue('#E3BF3E', 'rgba(255, 255, 255, 0.5)');
   return (
@@ -97,35 +98,6 @@ function SignUp() {
           bg={bgColor}
           boxShadow="0 20px 27px 0 rgb(0 0 0 / 5%)"
         >
-          {/* ! This is the dark liht mode switch */}
-          <HStack spacing="15px" justify="center" mb="22px">
-            <Flex
-              justify="center"
-              align="center"
-              w="75px"
-              h="75px"
-              borderRadius="15px"
-            >
-              <Text
-                fontSize="md"
-                color={textColor}
-                fontWeight="bold"
-                textAlign="center"
-                mb="0px"
-              >
-                Light/Dark:
-              </Text>
-            </Flex>
-            <Flex
-              justify="center"
-              align="center"
-              w="75px"
-              h="75px"
-              borderRadius="15px"
-            >
-              <ColorModeSwitcher />
-            </Flex>
-          </HStack>
 
           <Text
             fontSize="xl"
@@ -198,7 +170,9 @@ function SignUp() {
                 />
               </Link>
             </Flex>
-          </HStack>
+          </HStack >
+          <HStack my={5}>
+          <Divider w='50%' />
           <Text
             fontSize="lg"
             color="gray.400"
@@ -208,6 +182,9 @@ function SignUp() {
           >
             or
           </Text>
+          <Divider w='50%' />
+          </HStack>
+          
           <FormControl>
             <FormLabel ms="4px" fontSize="sm" fontWeight="normal">
               Name
@@ -246,7 +223,7 @@ function SignUp() {
               size="lg"
             />
             <FormControl display="flex" alignItems="center" mb="24px">
-              <Switch id="remember-login" colorScheme="teal" me="10px" />
+              <Switch id="remember-login" colorScheme="yellow" me="10px" />
               <FormLabel htmlFor="remember-login" mb="0" fontWeight="normal">
                 Remember me
               </FormLabel>
@@ -273,12 +250,6 @@ function SignUp() {
                   SIGN UP
                 </Button>
               </PopoverTrigger>
-              <PopoverContent>
-                <PopoverArrow />
-                <PopoverCloseButton />
-                <PopoverHeader>Rayen:</PopoverHeader>
-                <PopoverBody>Salli 3anibi yezzi mel bleda </PopoverBody>
-              </PopoverContent>
             </Popover>
           </FormControl>
           <Flex
@@ -301,6 +272,32 @@ function SignUp() {
               </Link>
             </Text>
           </Flex>
+          {/* ! This is the dark liht mode switch */}
+          <HStack spacing="15px" justify="center" mt="20px">
+            <Flex
+              justify="center"
+              align="center"
+              borderRadius="15px"
+            >
+              <Text
+                fontSize="md"
+                color={textColor}
+                fontWeight="bold"
+                textAlign="center"
+              >
+                Light/Dark:
+              </Text>
+            </Flex>
+            <Flex
+              justify="center"
+              align="center"
+              w="20px"
+              h="20px"
+              borderRadius="15px"
+            >
+              <ColorModeSwitcher />
+            </Flex>
+          </HStack>
         </Flex>
       </Flex>
     </Flex>

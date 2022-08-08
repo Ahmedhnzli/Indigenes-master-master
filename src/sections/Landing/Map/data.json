@@ -1011,7 +1011,7 @@
                 "id" : 13,
                 "name" : "Ksibet El Mediouni",
                 "img" : "URL",
-                "description" : "bjhgljhngjhknlgfyugngilu"
+                "description" : ""
                 
             }],
         "attributes" : [
@@ -1074,7 +1074,8 @@
         ],
         "nbrDistructs" : 11,
         "img" : "https://lh3.googleusercontent.com/-q_azuSConFk/Vjc2pNooflI/AAAAAAABIQM/pQdETLPRYPI/lac-de-gafsa-56.jpg?imgmax=800"
-    },    {
+    },
+    {
         "id" : "Tozeur",
         "name" : "Tozeur",
         "attributes" : [
