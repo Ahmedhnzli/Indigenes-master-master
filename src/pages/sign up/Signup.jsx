@@ -28,16 +28,25 @@ import {
   PopoverAnchor,
 } from '@chakra-ui/react';
 import { Logo } from './Logo';
+import viddark from '../../assets/video/gold2.png';
+import vidlight from '../../assets/video/gold.png';
+import './vid.css';
+
 // Assets
 import BgSignUp from '../../assets/img/BgSignUp.png';
 import React from 'react';
 import { FaApple, FaFacebook, FaGoogle } from 'react-icons/fa';
+import { BsArrowReturnLeft } from 'react-icons/bs';
+
+// ! Code starts here
 
 function SignUp() {
   const titleColor = useColorModeValue('#E3BF3E', '#E3BF3E');
   const textColor = useColorModeValue('gray.700', 'gray.200');
   const bgColor = useColorModeValue('white', 'gray.700');
   const bgIcons = useColorModeValue('#E3BF3E', 'rgba(255, 255, 255, 0.5)');
+  const vid = useColorModeValue(viddark, vidlight);
+
   return (
     <Flex
       direction="column"
@@ -45,6 +54,7 @@ function SignUp() {
       justifySelf="center"
       overflow="hidden"
     >
+      
       <Box
         position="absolute"
         minH={{ base: '70vh', md: '50vh' }}
@@ -56,11 +66,15 @@ function SignUp() {
         overflow="hidden"
         zIndex="-1"
         top="0"
-        bgImage={BgSignUp}
+        bgImage={vid}
         bgSize="cover"
         mx={{ md: 'auto' }}
         mt={{ md: '14px' }}
-      ></Box>
+      >
+        {/* <video className="gold" autoPlay loop>
+          <source src={vid} type="video/mp4"></source>
+        </video> */}
+      </Box>
 
       <Flex
         direction="column"
@@ -70,20 +84,25 @@ function SignUp() {
         mt="6.5rem"
         mb="30px"
       >
-        <Text fontSize="4xl" color="white" fontWeight="extrabold">
-          Welcome!
-        </Text>
         
         <Text
-          fontSize="lg"
-          color="white"
+          fontSize="6xl"
+          color="textColor"
+          fontWeight="extrabold"
+          textShadow="Black"
+        >
+          Welcome!
+        </Text>
+
+        <Text
+          fontSize="xl"
+          color="textColor"
           fontWeight="semibold"
           mt="10px"
           mb="26px"
           w={{ base: '90%', sm: '60%', lg: '40%', xl: '30%' }}
         >
-          Enter the required information and become a member to earn all the
-          benefits
+          Enter the required information and become a member
         </Text>
       </Flex>
 
@@ -98,6 +117,16 @@ function SignUp() {
           bg={bgColor}
           boxShadow="0 20px 27px 0 rgb(0 0 0 / 5%)"
         >
+          
+          <Flex
+            justify="center"
+            align="center"
+            w="100%"
+            h="4em"
+            borderRadius="15px"
+          >
+            <ColorModeSwitcher />
+          </Flex>
 
           <Text
             fontSize="xl"
@@ -141,6 +170,7 @@ function SignUp() {
               transition="all .25s ease"
               _hover={{ filter: 'brightness(120%)', bg: bgIcons }}
             >
+              
               <Link href="#">
                 <Icon
                   as={FaApple}
@@ -170,21 +200,21 @@ function SignUp() {
                 />
               </Link>
             </Flex>
-          </HStack >
-          <HStack my={5}>
-          <Divider w='50%' />
-          <Text
-            fontSize="lg"
-            color="gray.400"
-            fontWeight="bold"
-            textAlign="center"
-            mb="22px"
-          >
-            or
-          </Text>
-          <Divider w='50%' />
           </HStack>
-          
+          <HStack my={5}>
+            <Divider w="50%" />
+            <Text
+              fontSize="lg"
+              color="gray.400"
+              fontWeight="bold"
+              textAlign="center"
+              mb="22px"
+            >
+              or
+            </Text>
+            <Divider w="50%" />
+          </HStack>
+
           <FormControl>
             <FormLabel ms="4px" fontSize="sm" fontWeight="normal">
               Name
@@ -272,32 +302,6 @@ function SignUp() {
               </Link>
             </Text>
           </Flex>
-          {/* ! This is the dark liht mode switch */}
-          <HStack spacing="15px" justify="center" mt="20px">
-            <Flex
-              justify="center"
-              align="center"
-              borderRadius="15px"
-            >
-              <Text
-                fontSize="md"
-                color={textColor}
-                fontWeight="bold"
-                textAlign="center"
-              >
-                Light/Dark:
-              </Text>
-            </Flex>
-            <Flex
-              justify="center"
-              align="center"
-              w="20px"
-              h="20px"
-              borderRadius="15px"
-            >
-              <ColorModeSwitcher />
-            </Flex>
-          </HStack>
         </Flex>
       </Flex>
     </Flex>

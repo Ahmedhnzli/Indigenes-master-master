@@ -1,9 +1,12 @@
 import React from 'react';
 // Chakra imports
+import { BsArrowReturnLeft } from 'react-icons/bs';
+
 import {
   Box,
   Flex,
   Button,
+  ButtonGroup,
   FormControl,
   FormLabel,
   Heading,
@@ -24,12 +27,27 @@ function SignIn() {
   const titleColor = useColorModeValue('E3BF3E', 'E3BF3E');
   const textColor = useColorModeValue('gray.500', 'gray.400');
   return (
-    <Flex position="relative">
+    <Flex position="relative" mb="40px">
+      <RLink to='/'>  
+      <Button
+       leftIcon={<BsArrowReturnLeft />} 
+       colorScheme="yellow"
+        variant="outline" 
+        size='md'
+        position='absolute'
+        ml="2em"
+        mt='2em'
+       >
+        Go back
+      </Button>
+      </RLink>  
+
       <Flex
         h={{ sm: 'initial', md: '75vh', lg: '85vh' }}
         w="100%"
         maxW="1044px"
-        mx="100px"
+        mx="auto"
+        ml="30vh"
         justifyContent="space-between"
         mb="auto"
         pt={{ sm: '100px', md: '0px' }}
@@ -47,12 +65,17 @@ function SignIn() {
             p="5px"
             mt={{ md: '150px', lg: '100px' }}
           >
-            <Heading color={titleColor} fontSize="50px" mb="5px" textAlign='center'>
+            <Heading
+              color={titleColor}
+              fontSize="50px"
+              mb="5px"
+              textAlign="center"
+            >
               Welcome Back
             </Heading>
             <Text
-            textAlign='center'
-            font
+              textAlign="center"
+              font
               mb="30px"
               color={textColor}
               fontWeight="medium"
@@ -60,7 +83,7 @@ function SignIn() {
             >
               Enter your email and password to sign in
             </Text>
-            
+
             <FormControl>
               <FormLabel ms="4px" fontSize="md" fontWeight="semibold">
                 Email
@@ -129,33 +152,33 @@ function SignIn() {
               </Text>
             </Flex>
             <HStack spacing="15px" justify="center" mb="10px">
-            <Flex
-              justify="center"
-              align="center"
-              w="75px"
-              h="75px"
-              borderRadius="15px"
-            >
-              <Text
-                fontSize="md"
-                color={textColor}
-                fontWeight="bold"
-                textAlign="center"
-                mb="0px"
+              <Flex
+                justify="center"
+                align="center"
+                w="75px"
+                h="75px"
+                borderRadius="15px"
               >
-                Light/Dark:
-              </Text>
-            </Flex>
-            <Flex
-              justify="center"
-              align="center"
-              w="20px"
-              h="20px"
-              borderRadius="15px"
-            >
-              <ColorModeSwitcher />
-            </Flex>
-          </HStack>
+                <Text
+                  fontSize="md"
+                  color={textColor}
+                  fontWeight="bold"
+                  textAlign="center"
+                  mb="0px"
+                >
+                  Light/Dark:
+                </Text>
+              </Flex>
+              <Flex
+                justify="center"
+                align="center"
+                w="20px"
+                h="20px"
+                borderRadius="15px"
+              >
+                <ColorModeSwitcher />
+              </Flex>
+            </HStack>
           </Flex>
         </Flex>
         <Box
