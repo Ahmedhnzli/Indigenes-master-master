@@ -1,11 +1,14 @@
-import { Box, Image, Button, Flex, Heading,Modal,ModalBody,ModalCloseButton,ModalContent,ModalFooter,ModalHeader,ModalOverlay,Text ,useColorModeValue, useDisclosure, ListIcon, ListItem, List, Divider, Badge, HStack  } from '@chakra-ui/react'
+import { Box, Image, Button, Flex, Heading,Modal,ModalBody,ModalCloseButton,ModalContent,ModalFooter,ModalHeader,ModalOverlay,Text ,useColorModeValue, useDisclosure, ListIcon, ListItem, List, Divider, Badge, HStack, Skeleton  } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import "./style.css"
 import Popup from 'reactjs-popup';
 import data from './data.json'
 import {MdCheckCircle} from 'react-icons/md'
+import { Link as RLink , useNavigate } from 'react-router-dom';
+
 
 const Map = () => {
+  const navigate = useNavigate();
   const colores = useColorModeValue('#e2e8f0', '#2d3748')
   const [sampleObject, setSampleObject] = useState({});
   const OverlayOne = () => (
@@ -21,6 +24,7 @@ const Map = () => {
     let sampleObject = data.find(e => e.id == value)
     setSampleObject(sampleObject)
   }
+
   
   return (
     <Box textAlign="center">
@@ -61,29 +65,6 @@ const Map = () => {
                   Trigger - {open ? 'Opened' : 'Closed'}</path>)}
                   position="top center" on="hover" closeOnDocumentClick>
                   <span>Bizerte</span>
-                </Popup>
-                <Popup trigger={open => (<path id='Djerba' fill-rule="evenodd" clip-rule="evenodd" d="M438.994 505.46V508.995L438.198 511.116L437.402 515.359V519.602L438.198 522.43L440.586 525.966L445.362 527.38L449.342 525.966L450.138 523.844L453.321 524.551L454.913 525.259L455.709 528.087L457.301 533.037V535.158L458.893 536.572L460.485 535.865L462.077 530.915L469.24 526.673L474.812 523.137L479.588 518.895L481.976 518.187L485.159 516.066L485.955 513.238L483.568 511.116L480.384 509.702L478.792 508.288L470.832 504.752L467.649 502.631L458.097 501.924L446.954 500.51L443.77 501.217L438.994 505.46Z" fill={colores} stroke='#E3BF3E' stroke-width="2.5" onClick={() => {
-                    setOverlay(<OverlayOne />)
-                    onOpen()
-                    const el = document.getElementById('Djerba');
-                    getInfo(el.id)
-                    console.log(el)}
-                  } 
-                  >Trigger - {open ? 'Opened' : 'Closed'}</path>)}
-                 position="top center" on="hover" closeOnDocumentClick>
-                  <span> Djerba</span>
-                </Popup>
-                <Popup trigger={open => (<path id='Kerkennah' fill-rule="evenodd" clip-rule="evenodd" d="M507.448 367.574L502.673 374.645L498.693 377.474L497.101 381.716L493.121 385.959L493.917 388.08L496.305 387.373L500.285 385.252L508.244 380.302L513.816 376.767L517 373.231L518.592 371.11V368.988L516.204 367.574L512.224 366.867L507.448 367.574Z" fill={colores} stroke='#E3BF3E' stroke-width="2.5" onClick={() => {
-                    setOverlay(<OverlayOne />)
-                    onOpen()
-                    const el = document.getElementById('Kerkennah');
-                    getInfo(el.id)
-                    console.log(el)}
-                  } 
-                >
-                Trigger - {open ? 'Opened' : 'Closed'}</path>)} 
-                position="top center" on="hover" closeOnDocumentClick>
-                <span>Kerkennah</span>
                 </Popup>
                 <Popup trigger={open => (<path id='Kasserine' fill-rule="evenodd" clip-rule="evenodd" d="M110.275 378.189L117.416 380.314L127.793 383.127L134.933 386.658L141.3 387.377L148.476 388.096L156.426 386.658L173.944 380.314L193.854 371.814L204.97 364.752L210.563 356.971L212.955 350.596L217.704 347.064L218.513 342.814L223.297 340.689L233.639 337.877L240.815 333.627L243.207 323.721V315.971L241.588 311.721L238.423 309.596L236.031 308.189L233.639 307.471L229.664 306.064L228.081 302.533V297.564L232.056 291.221L237.613 288.377L238.423 285.564L239.196 282.721L243.207 280.596L247.955 277.783L250.347 274.939V269.283L247.181 265.752L241.588 262.221L234.448 257.971L228.081 254.439L224.88 252.314L220.096 250.908L219.322 250.189L213.729 248.783L210.563 245.939V244.533L207.362 240.283L204.97 239.596H202.613L195.437 238.158L187.487 233.221L185.095 231.814L177.11 229.689L171.552 228.283L168.386 227.564H165.185H160.401L158.818 231.096L155.652 236.064V240.283V242.408L154.034 245.252L150.059 247.377H146.893H142.919L138.908 243.846L136.516 242.408L130.959 243.127L127.793 244.533L124.592 247.377L123.783 248.783L119.034 250.189L117.803 250.314L116.642 263.627L115.059 274.939L112.667 284.127V290.502L114.25 296.158L117.416 301.814L124.592 312.408L125.401 313.846L124.592 315.252L121.426 317.377L117.416 321.627L112.667 329.377L110.275 337.158L109.466 349.189L107.883 357.689V369.689L108.692 371.814L109.466 375.346L110.275 377.471V378.189Z" fill={colores} stroke='#E3BF3E' onClick={() => {
                     setOverlay(<OverlayOne />)
@@ -172,7 +153,7 @@ const Map = () => {
                 position="top center" on="hover" closeOnDocumentClick>
                   <span>Gafsa</span>
                 </Popup>
-                <Popup trigger={open => (<path id='Sfax'fill-rule="evenodd" clip-rule="evenodd" d="M479.589 327.283H473.222L465.272 321.627L458.096 318.064L452.538 312.408L445.362 309.596L438.995 308.877L429.427 306.064L423.06 307.471L422.286 312.408L419.085 315.971L410.326 320.908L399.211 324.439L395.2 326.564L392.035 324.439L384.085 321.627L376.909 319.502H371.351L366.567 320.189L359.391 325.846L349.049 337.158L339.481 354.846L324.39 376.752L318.023 391.627L318.797 396.564L322.772 399.408L334.732 400.096L341.873 402.221L346.657 405.752L349.858 408.596L350.632 411.408V414.252L344.265 419.189L335.506 422.721H330.757L325.973 424.846L318.797 428.377L307.646 433.346L304.48 438.283V440.408L306.872 443.221L308.455 444.658V446.064V448.877L307.189 452.814L307.646 453.127L311.656 454.533L316.405 453.846L321.189 454.533L325.973 458.096L329.139 460.908L332.34 463.033L336.315 460.908L337.898 458.783H339.481L341.697 460.221H344.265V456.658L345.883 453.846L350.632 449.596L352.25 447.471L359.391 440.408L364.175 438.283L370.542 434.752L384.859 429.096L387.251 426.971L390.452 426.252L396.01 419.908L398.402 417.064L397.592 415.658L400.794 412.814L407.16 410.721L415.919 407.877L420.668 407.158L422.286 403.627L423.869 401.502L425.452 397.971L430.236 393.033L433.437 392.314H438.186H439.804L443.779 385.252L446.945 379.596L453.312 371.096L455.704 367.564L458.096 364.033L462.071 361.221L472.413 344.252L478.006 333.627L479.589 329.377V327.283Z" fill={colores} stroke='#E3BF3E' 
+                <Popup trigger={open => (<path id='Sfax'fill-rule="evenodd" clip-rule="evenodd" d="M507.448 367.574L502.673 374.645L498.693 377.474L497.101 381.716L493.121 385.959L493.917 388.08L496.305 387.373L500.285 385.252L508.244 380.302L513.816 376.767L517 373.231L518.592 371.11V368.988L516.204 367.574L512.224 366.867L507.448 367.574Z M479.589 327.283H473.222L465.272 321.627L458.096 318.064L452.538 312.408L445.362 309.596L438.995 308.877L429.427 306.064L423.06 307.471L422.286 312.408L419.085 315.971L410.326 320.908L399.211 324.439L395.2 326.564L392.035 324.439L384.085 321.627L376.909 319.502H371.351L366.567 320.189L359.391 325.846L349.049 337.158L339.481 354.846L324.39 376.752L318.023 391.627L318.797 396.564L322.772 399.408L334.732 400.096L341.873 402.221L346.657 405.752L349.858 408.596L350.632 411.408V414.252L344.265 419.189L335.506 422.721H330.757L325.973 424.846L318.797 428.377L307.646 433.346L304.48 438.283V440.408L306.872 443.221L308.455 444.658V446.064V448.877L307.189 452.814L307.646 453.127L311.656 454.533L316.405 453.846L321.189 454.533L325.973 458.096L329.139 460.908L332.34 463.033L336.315 460.908L337.898 458.783H339.481L341.697 460.221H344.265V456.658L345.883 453.846L350.632 449.596L352.25 447.471L359.391 440.408L364.175 438.283L370.542 434.752L384.859 429.096L387.251 426.971L390.452 426.252L396.01 419.908L398.402 417.064L397.592 415.658L400.794 412.814L407.16 410.721L415.919 407.877L420.668 407.158L422.286 403.627L423.869 401.502L425.452 397.971L430.236 393.033L433.437 392.314H438.186H439.804L443.779 385.252L446.945 379.596L453.312 371.096L455.704 367.564L458.096 364.033L462.071 361.221L472.413 344.252L478.006 333.627L479.589 329.377V327.283Z" fill={colores} stroke='#E3BF3E' 
                 onClick={() => {
                   setOverlay(<OverlayOne />)
                   onOpen()
@@ -334,9 +315,10 @@ const Map = () => {
             <ModalHeader fontSize={28} textAlign='center'><Text py={3}>{sampleObject.name}</Text>
             <HStack><Divider w='50%' size={5} /><Badge colorScheme='yellow'>Water</Badge><Divider w='50%' size={5} /></HStack></ModalHeader>
             <ModalCloseButton />
-           
             <ModalBody >
+            <Skeleton >
               <Image src={sampleObject.img}></Image>
+              </Skeleton>
               <List spacing={3} my={5}>
               {sampleObject.attributes && sampleObject.attributes.length>0 && sampleObject.attributes.map((item)=><ListItem><ListIcon as={MdCheckCircle} color='green.500' />{item.text}</ListItem>)}
               </List>
@@ -344,7 +326,9 @@ const Map = () => {
               
             </ModalBody>
             <ModalFooter>
-              <Button colorScheme='yellow' mx={3}>See More</Button>
+              <Button colorScheme='yellow' mx={3} onClick={() => {
+        navigate({pathname: `/projects/${sampleObject.id}`,state: sampleObject.name})
+      }}>See Projects</Button>
               <Button onClick={onClose}>Close</Button>
             </ModalFooter>
           </ModalContent>
@@ -353,4 +337,4 @@ const Map = () => {
   )
 }
 
-export default Map
+export default Map;
