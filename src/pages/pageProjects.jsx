@@ -122,7 +122,6 @@ const PageProjects = props => {
                 <Button value='kakashi'>Kakashi</Button>
               </Stack>
             </CheckboxGroup>
-        </Flex>
         <Grid position='absolute' templateColumns="repeat(3, 1fr)" gap={6} mx='50px'>
 
           <Center py={6}>
@@ -183,6 +182,7 @@ const PageProjects = props => {
           </Center>
 
         </Grid>
+        </Flex>
       </Flex>
     </Flex>
   )
